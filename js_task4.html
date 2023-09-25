@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+  
+
+  <button onclick="showCurrentDate()">Show Date</button>
+  <p id="dateResult"></p>
+
+  <button onclick="showCurrentTime()">Show Time</button>
+  <p id="timeResult"></p>
+
+  <script>
+    function showCurrentDate() {
+      const currentDate = new Date();
+      const dateFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = currentDate.toLocaleDateString(undefined, dateFormatOptions);
+
+      const dateResultElement = document.getElementById('dateResult');
+      dateResultElement.textContent = formattedDate;
+    }
+
+    function showCurrentTime() {
+      const currentTime = new Date();
+      const timeFormatOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+      const formattedTime = currentTime.toLocaleString(undefined, timeFormatOptions);
+
+      const timeResultElement = document.getElementById('timeResult');
+      timeResultElement.textContent = formattedTime;
+    }
+  </script>
+</body>
+</html>

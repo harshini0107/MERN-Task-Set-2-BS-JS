@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  
+  <p>Enter two numbers:</p>
+  <input type="number" id="inputNumber1" placeholder="Enter first number">
+  <br>
+  <input type="number" id="inputNumber2" placeholder="Enter second number">
+  <br>
+  <button onclick="multiply()">Multiply</button>
+  <button onclick="divide()">Divide</button>
+  <p id="result"></p>
+
+  <script>
+    function multiply() {
+      const inputNumber1 = parseFloat(document.getElementById('inputNumber1').value);
+      const inputNumber2 = parseFloat(document.getElementById('inputNumber2').value);
+      const resultElement = document.getElementById('result');
+
+      if (!isNaN(inputNumber1) && !isNaN(inputNumber2)) {
+        const multiplicationResult = inputNumber1 * inputNumber2;
+        resultElement.textContent = `Multiplication Result: ${multiplicationResult}`;
+      } else {
+        resultElement.textContent = 'Please enter valid numbers for both fields.';
+      }
+    }
+
+    function divide() {
+      const inputNumber1 = parseFloat(document.getElementById('inputNumber1').value);
+      const inputNumber2 = parseFloat(document.getElementById('inputNumber2').value);
+      const resultElement = document.getElementById('result');
+
+      if (!isNaN(inputNumber1) && !isNaN(inputNumber2)) {
+        if (inputNumber2 === 0) {
+          resultElement.textContent = 'Division by zero is not allowed.';
+        } else {
+          const divisionResult = inputNumber1 / inputNumber2;
+          resultElement.textContent =  `Division Result: ${divisionResult}`;
+        }
+      } else {
+        resultElement.textContent = 'Please enter valid numbers for both fields.';
+      }
+    }
+  </script>
+</body>
+</html>
